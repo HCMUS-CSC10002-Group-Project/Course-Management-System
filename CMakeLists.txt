@@ -28,8 +28,8 @@ file(GLOB PROJECT_SOURCES
     ${PROJECT_SOURCE_DIR}/src/*.cpp
     ${PROJECT_SOURCE_DIR}/src/entities/*.cpp
     ${PROJECT_SOURCE_DIR}/src/services/*.cpp
-    ${PROJECT_SOURCE_DIR}/external/glfw/include
 )
+
 
 add_executable(CourseManagementSystem ${PROJECT_SOURCES})
 
@@ -51,3 +51,6 @@ target_link_libraries(CourseManagementSystem PRIVATE ImGui glfw GLAD OpenGL::GL)
 add_subdirectory(external/glfw)
 add_library(GLAD external/glad/src/glad.c)
 target_include_directories(GLAD PUBLIC external/glad/include)
+target_include_directories(CourseManagementSystem PRIVATE
+    ${PROJECT_SOURCE_DIR}/external/glfw/include
+)
