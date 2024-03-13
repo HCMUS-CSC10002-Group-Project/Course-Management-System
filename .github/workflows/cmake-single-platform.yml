@@ -27,9 +27,8 @@ jobs:
       run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
 
     - name: Configure CMake
-      # Note: Windows might not require specifying the build type for single-configuration generators like Visual Studio
-      # but keeping it for consistency or multi-configuration generators like Ninja.
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G "Visual Studio 16 2019"
+      run: cmake -B build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G "Visual Studio 16 2019" -A x64
+    
       # Adjust the generator (-G) as per the installed Visual Studio version or prefer using "Ninja" for faster builds if available.
 
     - name: Build
