@@ -14,21 +14,34 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    
+    # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
+    # You can convert this to a matrix build if you need cross-platform coverage.
+    # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
+    runs-on: windows-latest
+
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with: 
         submodules: 'recursive'
+
+    - name: Install MinGW (GCC)
+      run: choco install mingw
+
     - name: Install dependencies
-      run: sudo apt-get update && sudo apt-get install build-essential cmake
-    
-    - name: Configure CMake
-      run: cmake -B build
-    
-    - name: Build
+      # Add steps to install any dependencies your project might have. For example:
+      run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
+
+
+    - name: Configure CMake for GCC
+      # Specify the MinGW Makefiles generator
+      run: cmake -B build -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      # Adjust the generator (-G) as per the installed Visual Studio version or prefer using "Ninja" for faster builds if available.
+
+    - name: Build with GCC
+      # Build using the MinGW Makefiles, no need to specify configuration
       run: cmake --build build -- -j2
-    
-    - name: Test
+
+    - name: Test with GCC
       working-directory: build
       run: ctest -j2
+
