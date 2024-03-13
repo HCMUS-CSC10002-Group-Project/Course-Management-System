@@ -14,32 +14,20 @@ env:
 
 jobs:
   build:
-    # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
-    # You can convert this to a matrix build if you need cross-platform coverage.
-    # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
-    runs-on: windows-latest
-
-    steps:
-    - uses: actions/checkout@v3
-      with: 
-        submodules: 'recursive'
-
-    - name: Install dependencies
-      # Add steps to install any dependencies your project might have. For example:
-      run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
-
-    - name: Configure CMake
-      run: cmake -B build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+    runs-on: ubuntu-latest
     
-      # Adjust the generator (-G) as per the installed Visual Studio version or prefer using "Ninja" for faster builds if available.
-
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install build-essential cmake
+    
+    - name: Configure CMake
+      run: cmake -B build
+    
     - name: Build
-      # Build with CMake. If you're using Visual Studio generator, specify the configuration.
-      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} -- /m
-      # The `-- /m` flag enables parallel builds in Visual Studio.
-
+      run: cmake --build build -- -j2
+    
     - name: Test
-      working-directory: ${{github.workspace}}/build
-      # Execute tests. Adjust command as needed for your test setup.
-      run: ctest -C ${{env.BUILD_TYPE}}
-
+      working-directory: build
+      run: ctest -j2
