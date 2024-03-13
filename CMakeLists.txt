@@ -55,23 +55,24 @@ target_include_directories(CourseManagementSystem PRIVATE
     ${PROJECT_SOURCE_DIR}/external/glfw/include
 )
 
-# For Debug build (with debug symbols and without optimizations)
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
+# For MSVC (Microsoft Visual C++)
+if(MSVC)
+    # MSVC-specific flags here
+    if(MSVC)
+    # Example: Use static runtime libraries
+    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
+    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
+endif()
 
-# For Release build (with optimizations and without debug symbols)
-set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libstdc++ -static-libgcc")
-
-# For dynamic linking with the runtime library
-# set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MDd")
-# set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MD")
-
-# Adjust compile options for GCC/Clang
-if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    # Example: set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
+else()
+    # GCC/Clang-specific flags here
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libstdc++ -static-libgcc")
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O0 -static-libstdc++")
     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2 -static-libstdc++")
 endif()
+
 
 set(gtest_force_shared_crt OFF CACHE BOOL "" FORCE)  # For static linking (/MT, /MTd)
 
