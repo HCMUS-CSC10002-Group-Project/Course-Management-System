@@ -49,8 +49,15 @@ target_link_libraries(CourseManagementSystem PRIVATE ImGui glfw GLAD OpenGL::GL)
 # If you're using GLFW, OpenGL, or other libraries, link them here as well
 # e.g., target_link_libraries(CourseManagementSystem PRIVATE glfw OpenGL ...)
 add_subdirectory(external/glfw)
-add_library(GLAD external/glad/src/glad.c)
-target_include_directories(GLAD PUBLIC external/glad/include)
+add_library(GLAD external/localGlad/src/glad.c)
+target_include_directories(GLAD PUBLIC external/localGlad/include)
 target_include_directories(CourseManagementSystem PRIVATE
     ${PROJECT_SOURCE_DIR}/external/glfw/include
 )
+
+enable_testing()
+# Add Google Test as a subdirectory
+add_subdirectory(${PROJECT_SOURCE_DIR}/external/googletest)
+
+# Add the tests directory
+add_subdirectory(tests)
