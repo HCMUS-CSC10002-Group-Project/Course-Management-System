@@ -21,6 +21,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with: 
+        submodules: 'recursive'
 
     - name: Install dependencies
       # Add steps to install any dependencies your project might have. For example:
