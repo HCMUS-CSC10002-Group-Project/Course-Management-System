@@ -1,5 +1,6 @@
-#include <iostream>
-#include <stdexcept>
+// DynamicArray.h
+#ifndef DYNAMIC_ARRAY_H
+#define DYNAMIC_ARRAY_H
 
 using namespace std;
 
@@ -26,3 +27,6 @@ struct DynamicArray
 private:
     void Resize(int newCapacity);
 };
+
+#include "DynamicArrayImpl.h"
+#endif // DYNAMIC_ARRAY_H
