@@ -28,5 +28,5 @@ private:
     void Resize(int newCapacity);
 };
 
-#include "DynamicArrayImpl.h"
+#include "DynamicArray.tpp"
 #endif // DYNAMIC_ARRAY_H
