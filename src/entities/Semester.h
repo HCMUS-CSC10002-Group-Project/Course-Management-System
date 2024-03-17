@@ -1,4 +1,5 @@
 #include <string>
+#include "Date.h"
 using std::string;
 class Semester
 {
