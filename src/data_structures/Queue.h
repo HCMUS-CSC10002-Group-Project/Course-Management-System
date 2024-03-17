@@ -23,11 +23,11 @@ private:
 
 public:
     Queue();
-    void enqueue(T element);
-    T dequeue();
-    T front();
+    void EnQueue(T element);
+    T DeQueue();
+    T Front();
     bool IsEmpty() const;
-    int size() const;
+    int Size() const;
     ~Queue();
 };
 
