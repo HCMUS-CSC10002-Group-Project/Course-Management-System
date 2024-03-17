@@ -21,7 +21,7 @@ void Stack<T>::push(T element)
 template <typename T>
 T Stack<T>::pop()
 {
-    if (isEmpty())
+    if (IsEmpty())
     {
         throw std::out_of_range("Stack is empty");
     }
@@ -37,7 +37,7 @@ T Stack<T>::pop()
 template <typename T>
 T Stack<T>::top() const
 {
-    if (isEmpty())
+    if (IsEmpty())
     {
         throw std::out_of_range("Stack is empty");
     }
@@ -46,7 +46,7 @@ T Stack<T>::top() const
 
 // Checks if the stack is empty.
 template <typename T>
-bool Stack<T>::isEmpty() const
+bool Stack<T>::IsEmpty() const
 {
     return Size == 0;
 }

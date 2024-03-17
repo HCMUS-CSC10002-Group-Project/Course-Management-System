@@ -23,7 +23,7 @@ struct Stack
     void push(T element);
     T pop();
     T top() const;
-    bool isEmpty() const;
+    bool IsEmpty() const;
     int size() const;
     ~Stack();
 };

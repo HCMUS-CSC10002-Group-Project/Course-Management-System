@@ -14,7 +14,7 @@ void Queue<T>::enqueue(T element)
 
     Node<T> *newNode = new Node<T>(element);
 
-    if (isEmpty())
+    if (IsEmpty())
     {
         frontNode = newNode;
     }
@@ -32,7 +32,7 @@ template <typename T>
 T Queue<T>::dequeue()
 {
 
-    if (isEmpty())
+    if (IsEmpty())
     {
         throw std::out_of_range("Queue is empty");
     }
@@ -56,7 +56,7 @@ T Queue<T>::dequeue()
 template <typename T>
 T Queue<T>::front()
 {
-    if (isEmpty())
+    if (IsEmpty())
     {
         throw std::out_of_range("Queue is empty");
     }
@@ -66,7 +66,7 @@ T Queue<T>::front()
 
 // Checks if the queue is empty
 template <typename T>
-bool Queue<T>::isEmpty() const
+bool Queue<T>::IsEmpty() const
 {
     return Size == 0;
 }

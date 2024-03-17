@@ -26,7 +26,7 @@ public:
     void enqueue(T element);
     T dequeue();
     T front();
-    bool isEmpty() const;
+    bool IsEmpty() const;
     int size() const;
     ~Queue();
 };
