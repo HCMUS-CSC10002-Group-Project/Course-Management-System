@@ -20,11 +20,11 @@ struct Stack
     int Size;
 
     Stack();
-    void push(T element);
-    T pop();
-    T top() const;
-    bool isEmpty() const;
-    int size() const;
+    void Push(T element);
+    T Pop();
+    T Top() const;
+    bool IsEmpty() const;
+    int Size() const;
     ~Stack();
 };
 

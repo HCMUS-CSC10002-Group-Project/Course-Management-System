@@ -9,7 +9,7 @@ Stack<T>::Stack() : topNode(nullptr), Size(0) {}
 
 // Pushes an element onto the top of the stack.
 template <typename T>
-void Stack<T>::push(T element)
+void Stack<T>::Push(T element)
 {
     Node<T> *newNode = new Node<T>(element);
     newNode->next = topNode;
@@ -19,9 +19,9 @@ void Stack<T>::push(T element)
 
 // Pops the top element off the stack and returns it.
 template <typename T>
-T Stack<T>::pop()
+T Stack<T>::Pop()
 {
-    if (isEmpty())
+    if (IsEmpty())
     {
         throw std::out_of_range("Stack is empty");
     }
@@ -35,9 +35,9 @@ T Stack<T>::pop()
 
 // Returns the top element of the stack without removing it.
 template <typename T>
-T Stack<T>::top() const
+T Stack<T>::Top() const
 {
-    if (isEmpty())
+    if (IsEmpty())
     {
         throw std::out_of_range("Stack is empty");
     }
@@ -46,14 +46,14 @@ T Stack<T>::top() const
 
 // Checks if the stack is empty.
 template <typename T>
-bool Stack<T>::isEmpty() const
+bool Stack<T>::IsEmpty() const
 {
     return Size == 0;
 }
 
 // Returns the number of elements in the stack.
 template <typename T>
-int Stack<T>::size() const
+int Stack<T>::Size() const
 {
     return Size;
 }
