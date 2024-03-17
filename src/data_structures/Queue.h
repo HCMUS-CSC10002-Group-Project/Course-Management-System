@@ -30,6 +30,3 @@ public:
     int size() const;
     ~Queue();
 };
-
-#include "Queue.tpp"
-#endif // QUEUE_H

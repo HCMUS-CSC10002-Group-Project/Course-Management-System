@@ -30,12 +30,10 @@ public:
     void InsertBefore(Node<T> *node, T element);
     void RemoveAt(int index);
     T Get(int index) const;
+    void Set(int index, T element);
     void Clear();
 
 private:
     Node<T> *head;
     int size;
 };
-
-#include "LinkedList.tpp"
-#endif // LINKED_LIST_H

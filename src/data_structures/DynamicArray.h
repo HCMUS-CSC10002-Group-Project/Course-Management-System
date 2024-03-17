@@ -23,10 +23,11 @@ struct DynamicArray
     void Clear();
     int Find(T element) const;
     bool Contains(T element) const;
+    void Set(int index, T element);
 
 private:
     void Resize(int newCapacity);
 };
 
-#include "DynamicArray.tpp"
+#include "DynamicArrayImpl.h"
 #endif // DYNAMIC_ARRAY_H

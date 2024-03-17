@@ -30,6 +30,7 @@ public:
     void InsertBefore(DNode<T> *node, T element);
     void RemoveAt(int index);
     T Get(int index) const;
+    void Set(int index, T element);
     void Clear();
 
 private:
@@ -37,6 +38,3 @@ private:
     DNode<T> *tail;
     int size;
 };
-
-#include "DoublyLinkedList.tpp"
-#endif // DOUBLY_LINKED_LIST_H

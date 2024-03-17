@@ -28,5 +28,5 @@ struct Stack
     ~Stack();
 };
 
-#include "Stack.tpp"
+#include "StackImpl.h"
 #endif // STACK_H
