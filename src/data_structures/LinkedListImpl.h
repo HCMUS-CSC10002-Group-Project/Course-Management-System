@@ -1,6 +1,5 @@
 #include "LinkedList.h"
 #include <stdexcept>
-#include <iostream>
 
 using namespace std;
 

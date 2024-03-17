@@ -1,4 +1,7 @@
 #include "Queue.h"
+#include <stdexcept>
+
+using namespace std;
 
 // Constructor: Initializes frontNode, rearNode, and Size
 template <typename T>
