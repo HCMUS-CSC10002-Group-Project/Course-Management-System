@@ -10,5 +10,16 @@ class Semester
         Date start_date;
         Date end_Date;
     public:
-        bool addCourse();
+        //getter
+        string getSemesterID();
+        string getYearID();
+        int getSemesterNumber();
+        Date getStartDate();
+        Date getEndDate();
+        //setter
+        void setSemesteID(string newSemesterID);
+        void setYearID(string newYearID);
+        void setSemesterNumber(string newSemesterNumber);
+        void setStartDate(Date newStartDate);
+        void setEndDate(Date newEndDate);
 };
