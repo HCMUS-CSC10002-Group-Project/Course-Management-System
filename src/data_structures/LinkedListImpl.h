@@ -1,6 +1,5 @@
 #include "LinkedList.h"
 #include <stdexcept>
-#include <iostream>
 
 using namespace std;
 
@@ -181,6 +180,20 @@ T LinkedList<T>::Get(int index) const
         current = current->next;
 
     return current->data;
+}
+
+// Sets the element at the specified index in the linked list.
+template <typename T>
+void LinkedList<T>::Set(int index, T element)
+{
+    if (index < 0 || index >= size)
+        throw std::out_of_range("Index out of range");
+
+    Node<T> *current = head;
+    for (int i = 0; i < index; ++i)
+        current = current->next;
+
+    current->data = element;
 }
 
 // Clears the linked list, deallocating memory used by all nodes.

@@ -1,6 +1,5 @@
 #include "DoublyLinkedList.h"
 #include <stdexcept>
-#include <iostream>
 
 using namespace std;
 
@@ -207,6 +206,20 @@ T DoublyLinkedList<T>::Get(int index) const
             current = current->prev;
     }
     return current->data;
+}
+
+// Sets the element at the specified index in the doubly linked list.
+template <typename T>
+void DoublyLinkedList<T>::Set(int index, T element)
+{
+    if (index < 0 || index >= size)
+        throw std::out_of_range("Index out of range");
+
+    DNode<T> *current = head;
+    for (int i = 0; i < index; ++i)
+        current = current->next;
+
+    current->data = element;
 }
 
 // clears the entire doubly linked list by deallocating memory for each node and resetting the size to zero.
