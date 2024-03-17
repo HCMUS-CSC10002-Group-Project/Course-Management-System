@@ -20,14 +20,14 @@ class User
 
     public:
         string getID();
-        string getFIrstName();
+        string getFirstName();
         string getLastName();
         string getFullName();
-        void setFullName();
+        void setFullName(string newFullName);
         string getDepartment();
-        void setDepartment();
+        void setDepartment(string newDepartment);
         string getEmail();
-        void setEmail();
+        void setEmail(string newEmail);
         string getUsername();
 };
 
