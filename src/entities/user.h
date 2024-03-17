@@ -1,3 +1,6 @@
+#ifndef USER_H
+#define USER_H
+
 #include <string>
 
 using std::string;
@@ -14,7 +17,7 @@ class User
         string email;
         string username;
         string password;
-    
+
     public:
         string getID();
         string getFIrstName();
@@ -27,3 +30,5 @@ class User
         void setEmail();
         string getUsername();
 };
+
+#endif //USER_H
