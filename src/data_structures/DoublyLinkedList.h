@@ -1,5 +1,6 @@
-#include <stdexcept>
-#include <iostream>
+// DoublyLinkedList.h
+#ifndef DOUBLY_LINKED_LIST_H
+#define DOUBLY_LINKED_LIST_H
 
 using namespace std;
 
@@ -13,7 +14,7 @@ struct DNode
 };
 
 template <typename T>
-class DoublyLinkedList
+struct DoublyLinkedList
 {
 public:
     DoublyLinkedList();
@@ -29,6 +30,7 @@ public:
     void InsertBefore(DNode<T> *node, T element);
     void RemoveAt(int index);
     T Get(int index) const;
+    void Set(int index, T element);
     void Clear();
 
 private:
@@ -36,3 +38,6 @@ private:
     DNode<T> *tail;
     int size;
 };
+
+#include "DoublyLinkedListImpl.h"
+#endif // DOUBLY_LINKED_LIST_H
