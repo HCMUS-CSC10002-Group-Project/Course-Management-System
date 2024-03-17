@@ -3,7 +3,6 @@
 
 #include <string>
 #include "Date.h"
-#include "../data_structures/LinkedList.h"
 using std::string;
 class Semester
 {
