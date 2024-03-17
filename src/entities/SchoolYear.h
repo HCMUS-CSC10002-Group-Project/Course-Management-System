@@ -1,6 +1,6 @@
 #ifndef SCHOOLYEAR_H
 #define SCHOOLYEAR_H
-#include "Semester.h"
+#include "semester.h"
 #include "date.h"
 #include <string>
 #include "../data_structures/LinkedList.h"
@@ -11,19 +11,20 @@ class SchoolYear
         string year_ID;
         Date start_date;
         Date end_date;
-        LinkedList<Semester> semesters;
+        LinkedList<semester> semesters;
     public:
         //getters
         string getyearID();
         Date getStartDate();
         Date getEndDate();
-        LinkedList<Semester> getSemesters();
+        LinkedList<semester> getSemesters();
         //setters
         void setStartDate(Date newStartDate);
         void setEndDate(Date newEndDate);
-        void setListOfSemester(LinkedList<Semester> newList);
+        void removeSemester(semester semester.semester_ID);
+        void addSemester(semester semester.semester_ID);
         //methods
-        bool getNumSemester(LinkedList<Semester> listOfSemester);
-        bool addSemester(Semester semester);
+        bool getNumSemester(LinkedList<semester> listOfSemester);
+        bool addSemester(semester semester);
 };
 #endif
