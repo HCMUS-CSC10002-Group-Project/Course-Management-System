@@ -5,8 +5,6 @@
 #include "Date.h"
 #include "../data_structures/LinkedList.h"
 
-//TODO: uncomment date_of_birth and its getter/setter after Date is implemented
-
 class Student : public User
 {
     private:
