@@ -5,7 +5,6 @@
     "array": "cpp",
     "string_view": "cpp",
     "initializer_list": "cpp",
-    "span": "cpp",
-    "stack.h": "c"
+    "span": "cpp"
   }
 }
