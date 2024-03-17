@@ -1,5 +1,9 @@
+#ifndef SEMESTER_H
+#define SEMESTER_H 
+
 #include <string>
 #include "Date.h"
+#include "../data_structures/LinkedList.h"
 using std::string;
 class Semester
 {
@@ -23,3 +27,4 @@ class Semester
         void setStartDate(Date newStartDate);
         void setEndDate(Date newEndDate);
 };
+#endif
