@@ -1,5 +1,6 @@
-#include <stdexcept>
-#include <iostream>
+// Stack.h
+#ifndef STACK_H
+#define STACK_H
 
 using namespace std;
 
@@ -26,3 +27,6 @@ struct Stack
     int size() const;
     ~Stack();
 };
+
+#include "Stack.tpp"
+#endif // STACK_H

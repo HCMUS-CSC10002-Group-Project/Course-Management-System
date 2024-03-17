@@ -1,10 +1,11 @@
 {
-    "C_Cpp.errorSquiggles": "enabled",
-    "files.associations": {
-        "*.ejs": "html",
-        "array": "cpp",
-        "string_view": "cpp",
-        "initializer_list": "cpp",
-        "span": "cpp"
-    }
+  "C_Cpp.errorSquiggles": "enabled",
+  "files.associations": {
+    "*.ejs": "html",
+    "array": "cpp",
+    "string_view": "cpp",
+    "initializer_list": "cpp",
+    "span": "cpp",
+    "stack.h": "c"
+  }
 }

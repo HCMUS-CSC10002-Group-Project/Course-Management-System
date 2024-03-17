@@ -1,5 +1,6 @@
-#include <stdexcept>
-#include <iostream>
+// LinkedList.h
+#ifndef LINKED_LIST_H
+#define LINKED_LIST_H
 
 using namespace std;
 
@@ -13,7 +14,7 @@ struct Node
 };
 
 template <typename T>
-class LinkedList
+struct LinkedList
 {
 public:
     LinkedList();
@@ -35,3 +36,6 @@ private:
     Node<T> *head;
     int size;
 };
+
+#include "LinkedList.tpp"
+#endif // LINKED_LIST_H
