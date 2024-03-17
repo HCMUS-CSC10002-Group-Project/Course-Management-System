@@ -1,5 +1,6 @@
-#include <stdexcept>
-#include <iostream>
+// Queue.h
+#ifndef QUEUE_H
+#define QUEUE_H
 
 using namespace std;
 
@@ -29,3 +30,6 @@ public:
     int size() const;
     ~Queue();
 };
+
+#include "QueueImpl.h"
+#endif // QUEUE_H
