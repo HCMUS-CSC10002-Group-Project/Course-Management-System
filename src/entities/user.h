@@ -7,7 +7,7 @@ using std::string;
 
 class User
 {
-    private:
+    protected:
         string ID;
         string role;
         string first_name;
