@@ -123,3 +123,13 @@ bool DynamicArray<T>::Contains(T element) const
 {
     return Find(element) != -1;
 }
+
+// Set element at specified index
+template <typename T>
+void DynamicArray<T>::Set(int index, T element)
+{
+    if (index < 0 || index >= size)
+        throw std::out_of_range("Index out of range");
+
+    arr[index] = element;
+}
