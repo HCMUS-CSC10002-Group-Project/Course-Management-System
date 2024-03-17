@@ -1,3 +1,5 @@
+#ifndef DATE_H
+#define DATE_H
 class Date
 {
     private:
@@ -5,6 +7,6 @@ class Date
         int month;
         int date;
 };
-
+#endif
 
 
