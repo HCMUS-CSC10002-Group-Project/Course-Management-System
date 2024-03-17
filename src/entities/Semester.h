@@ -2,7 +2,7 @@
 #define SEMESTER_H 
 
 #include <string>
-#include "Date.h"
+#include "date.h"
 using std::string;
 class Semester
 {
