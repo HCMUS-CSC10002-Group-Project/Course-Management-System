@@ -11,7 +11,7 @@ class Semester
         string year_ID;
         int semester_number;
         Date start_date;
-        Date end_Date;
+        Date end_date;
     public:
         //getter
         string getSemesterID();
