@@ -37,3 +37,6 @@ private:
     Node<T> *head;
     int size;
 };
+
+#include "LinkedListImpl.h"
+#endif // LINKED_LIST_H

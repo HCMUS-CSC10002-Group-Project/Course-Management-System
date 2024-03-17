@@ -30,3 +30,6 @@ public:
     int size() const;
     ~Queue();
 };
+
+#include "QueueImpl.h"
+#endif // QUEUE_H

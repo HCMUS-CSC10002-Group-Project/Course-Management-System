@@ -38,3 +38,6 @@ private:
     DNode<T> *tail;
     int size;
 };
+
+#include "DoublyLinkedListImpl.h"
+#endif // DOUBLY_LINKED_LIST_H
