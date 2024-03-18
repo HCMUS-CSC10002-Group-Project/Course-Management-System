@@ -23,11 +23,11 @@ class User
         string getFirstName();
         string getLastName();
         string getFullName();
-        void setFullName(string newFullName);
+        bool setFullName(string newFullName);
         string getDepartment();
-        void setDepartment(string newDepartment);
+        bool setDepartment(string newDepartment);
         string getEmail();
-        void setEmail(string newEmail);
+        bool setEmail(string newEmail);
         string getUsername();
 };
 
