@@ -2,7 +2,7 @@
 #define STUDENT_H
 
 #include "user.h"
-#include "Date.h"
+#include "date.h"
 #include "../data_structures/LinkedList.h"
 
 class Student : public User
