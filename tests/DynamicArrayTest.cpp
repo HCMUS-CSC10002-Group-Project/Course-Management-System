@@ -267,8 +267,3 @@ TEST(DynamicArrayTest, SizeDoesNotIncreaseWhenElementNotFound)
     EXPECT_THROW(arr.Remove(4), std::out_of_range);
     EXPECT_EQ(arr.Size(), 3);
 }
-int main(int argc, char **argv)
-{
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
