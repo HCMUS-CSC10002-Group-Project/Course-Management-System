@@ -5,7 +5,7 @@ using namespace std;
 
 // Constructor: Initializes frontNode, rearNode, and Size
 template <typename T>
-Queue<T>::Queue() : frontNode(nullptr), rearNode(nullptr), Size(0) {}
+Queue<T>::Queue() : frontNode(nullptr), rearNode(nullptr), size(0) {}
 
 // Enqueues an element to the end of the queue
 template <typename T>
