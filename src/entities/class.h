@@ -14,8 +14,8 @@ class Class
         string getName();
         LinkedList<Student> getListOfStudents();
         //setters
-        void setClassID(string newClassID);
         void setName(string name);
-        void setListOfStudent(LinkedList<Student> students);
+        bool addStudent(Student student);
+        bool removeStudent(Student student);
 };
 #endif
