@@ -25,18 +25,18 @@ class Student : public User
         //setters and getters
         string getStudentID();
         string getClassID();
-        void setClassID(string newClassID);
-        void addCourse(string newCourseID);
-        void removeCourse(string courseID);
+        bool setClassID(string newClassID);
+        bool addCourse(string newCourseID);
+        bool removeCourse(string courseID);
         LinkedList <string> getCourseIDs();
         string getGender();
-        void setGender(string newGender);
+        bool setGender(string newGender);
         Date getDateOfBirth();
-        void setDateOfBirth(Date newDateOfBirth);
+        bool setDateOfBirth(Date newDateOfBirth);
         string getMajor();
-        void setMajor(string newMajor);
+        bool setMajor(string newMajor);
         int getCohort();
-        void setCohort(int newCohort);
+        bool setCohort(int newCohort);
 };
 
 #endif STUDENT_H
