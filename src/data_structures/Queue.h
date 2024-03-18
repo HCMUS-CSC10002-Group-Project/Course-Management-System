@@ -19,15 +19,15 @@ struct Queue
 private:
     Node<T> *frontNode;
     Node<T> *rearNode;
-    int Size;
+    int size;
 
 public:
     Queue();
-    void enqueue(T element);
-    T dequeue();
-    T front();
-    bool isEmpty() const;
-    int size() const;
+    void EnQueue(T element);
+    T DeQueue();
+    T Front();
+    bool IsEmpty() const;
+    int Size() const;
     ~Queue();
 };
 
