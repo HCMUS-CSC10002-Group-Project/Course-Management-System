@@ -25,7 +25,7 @@ public:
     void Remove(T element);
     DNode<T> *Find(T element);
     int Size();
-    bool isEmpty();
+    bool IsEmpty();
     void InsertAfter(DNode<T> *node, T element);
     void InsertBefore(DNode<T> *node, T element);
     void RemoveAt(int index);
