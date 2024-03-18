@@ -18,7 +18,7 @@ class Semester
         Date getStartDate();
         Date getEndDate();
         //setter
-        void setStartDate(Date newStartDate);
-        void setEndDate(Date newEndDate);
+        bool setStartDate(Date newStartDate);
+        bool setEndDate(Date newEndDate);
 };
 #endif
