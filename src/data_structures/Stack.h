@@ -17,14 +17,14 @@ template <typename T>
 struct Stack
 {
     Node<T> *topNode;
-    int Size;
+    int size;
 
     Stack();
-    void push(T element);
-    T pop();
-    T top() const;
-    bool isEmpty() const;
-    int size() const;
+    void Push(T element);
+    T Pop();
+    T Top() const;
+    bool IsEmpty() const;
+    int Size() const;
     ~Stack();
 };
 

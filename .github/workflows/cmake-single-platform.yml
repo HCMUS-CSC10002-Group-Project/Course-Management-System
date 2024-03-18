@@ -4,7 +4,7 @@ name: CMake CI
 
 on:
   push:
-    branches: [ "dev", "feature/**"]
+    branches: [ "dev"]
   pull_request:
     branches: [ "dev" ]
 
