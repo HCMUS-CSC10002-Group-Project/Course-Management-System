@@ -19,11 +19,11 @@ class SchoolYear
         Date getEndDate();
         LinkedList<Semester> getSemesters();
         //setters
-        void setStartDate(Date newStartDate);
-        void setEndDate(Date newEndDate);
-        void removeSemester(Semester semester.semester_ID);
+        bool setStartDate(Date newStartDate);
+        bool setEndDate(Date newEndDate);
         //methods
-        bool getNumSemester(LinkedList<Semester> listOfSemester);
+        int getNumSemester();
         bool addSemester(Semester semester);
+        bool removeSemester(Semester semester)
 };
 #endif
