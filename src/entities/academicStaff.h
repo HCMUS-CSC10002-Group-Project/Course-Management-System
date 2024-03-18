@@ -9,7 +9,7 @@ class AcademicStaff : public User
         string staff_ID;
     public:
         string getStaffID();
-        void setStaffID(string newID);
+        bool setStaffID(string newID);
 };
 
 #endif ACADEMIC_STAFF_H
