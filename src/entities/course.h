@@ -26,6 +26,9 @@ class Course
         //Scoreboard score_board;
 
     public:
+        //constructor
+        Course(string semesterID, string classID, int numberOfCredits, int capacity, string dayOfWeek, string sessionTime);
+
         //getters and setters
         string getCourseID();
         string getSemesterID();
