@@ -13,11 +13,6 @@ class SchoolYear
         Date end_date;
         LinkedList<Semester> semesters;
     public:
-        //constructor
-        SchoolYear()
-        {
-            year_ID = " ";
-        };
         //getters
         string getyearID();
         Date getStartDate();
@@ -30,5 +25,7 @@ class SchoolYear
         int getNumSemester();
         bool addSemester(Semester semester);
         bool removeSemester(Semester semester);
+        //constructor
+        SchoolYear(Date start_date, Date end_date, LinkedList<Semester> semesters);
 };
 #endif
