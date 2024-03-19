@@ -3,12 +3,13 @@
 #include <string>
 #include "student.h"
 #include "detailedScore.h"
+#include <map>
 using std::string;
 class Scoreboard
 {
     private:
         string course_ID;
-        DetailedScore scores;
+        map<Student, DetailedScore> scores;
     public:
     //getters
     string getCourseID();
