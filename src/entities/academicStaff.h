@@ -8,6 +8,7 @@ class AcademicStaff : public User
     private:
         string staff_ID;
     public:
+        AcademicStaff();
         string getStaffID();
 };
 
