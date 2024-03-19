@@ -12,9 +12,9 @@ class Date
     int getMonth();
     int getYear();
     //setters
-    void setYear(int newDate);
-    void setMonth(int newMonth);
-    void setDate(int newDate);
+    bool setYear(int newDate);
+    bool setMonth(int newMonth);
+    bool setDate(int newDate);
     //constructor
     Date(int year, int month, int date);
 };
