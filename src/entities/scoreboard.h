@@ -1,6 +1,8 @@
 #ifndef SCOREBOARD_H
 #define SCOREBOARD_H
 #include <string>
+#include "student.h"
+#include "detailedScore.h"
 using std::string;
 class Scoreboard
 {
@@ -9,9 +11,10 @@ class Scoreboard
     public:
     //getters
     string getCourseID();
-    //setters
-    void setCourseID(string newCourseID);
     //methods
-    void addScore();
+    void addScore(Student student, DetailedScore detailedScore);
+    void updateStudentResult(Student student, DetailedSocre detailedScore);
+    //constructor
+    Scoreboard(string course_ID);
 };
 #endif
