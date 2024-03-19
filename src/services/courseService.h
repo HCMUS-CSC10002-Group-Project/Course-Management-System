@@ -11,7 +11,7 @@ class CourseService
     bool enrollStudentInCourse(string studenID, string courseID);
     bool unenrollStudentFromCourse(string studentId, string courseID);
     bool deleteCourse(Course course);
-    LinkedList<Course> viewCourses(string courseID);
+    void viewCourses(string courseID);
     LinkedList<Student> viewStudentsInCourse(string courseID);
 };
 #endif
