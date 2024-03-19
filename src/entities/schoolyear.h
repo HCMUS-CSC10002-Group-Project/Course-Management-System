@@ -13,6 +13,11 @@ class SchoolYear
         Date end_date;
         LinkedList<Semester> semesters;
     public:
+        //constructor
+        SchoolYear()
+        {
+            year_ID = " ";
+        };
         //getters
         string getyearID();
         Date getStartDate();
@@ -24,6 +29,6 @@ class SchoolYear
         //methods
         int getNumSemester();
         bool addSemester(Semester semester);
-        bool removeSemester(Semester semester)
+        bool removeSemester(Semester semester);
 };
 #endif
