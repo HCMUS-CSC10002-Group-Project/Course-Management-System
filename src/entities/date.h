@@ -8,12 +8,7 @@ class Date
         int date;
     public:
     //constructor
-    Date()
-    {
-        year = 0;
-        month = 0;
-        date = 0;
-    }
+    Date(int year, int month, int date);
 };
 #endif
 
