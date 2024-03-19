@@ -6,6 +6,14 @@ class Date
         int year;
         int month;
         int date;
+    public:
+    //constructor
+    Date()
+    {
+        year = 0;
+        month = 0
+        date = 0;
+    }
 };
 #endif
 
