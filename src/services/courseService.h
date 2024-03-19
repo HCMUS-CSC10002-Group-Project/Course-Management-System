@@ -8,7 +8,7 @@ class CourseService
     public: 
     bool addCourse(Course course);
     bool updateCourse(string courseID, Course newCourse);
-    bool enrollStudentInCourse(string studenID, string courseID);
+    bool enrollStudentInCourse(string studentID, string courseID);
     bool unenrollStudentFromCourse(string studentId, string courseID);
     bool deleteCourse(Course course);
     LinkedList<Course> viewCourses();
