@@ -18,6 +18,9 @@ class Student : public User
         int cohort;
     
     public:
+        //constructor
+        Student(string classID, string gender, Date dateOfBirth, string major, int cohort);
+
         //view courses and scoreboard
         void viewMyCourses();
         void viewMyScoreboard();
