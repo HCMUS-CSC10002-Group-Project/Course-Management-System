@@ -24,6 +24,8 @@ class SchoolYear
         //methods
         int getNumSemester();
         bool addSemester(Semester semester);
-        bool removeSemester(Semester semester)
+        bool removeSemester(Semester semester);
+        //constructor
+        SchoolYear(Date start_date, Date end_date);
 };
 #endif
