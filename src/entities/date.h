@@ -11,7 +11,7 @@ class Date
     Date()
     {
         year = 0;
-        month = 0
+        month = 0;
         date = 0;
     }
 };
