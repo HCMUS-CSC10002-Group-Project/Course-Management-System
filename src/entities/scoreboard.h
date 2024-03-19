@@ -8,6 +8,7 @@ class Scoreboard
 {
     private:
         string course_ID;
+        DetailedScore scores;
     public:
     //getters
     string getCourseID();
