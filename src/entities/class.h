@@ -17,5 +17,7 @@ class Class
         void setName(string name);
         bool addStudent(Student student);
         bool removeStudent(Student student);
+        //constructor
+        Class(string name, LinkedList<Student> students);
 };
 #endif
