@@ -12,4 +12,4 @@ class AcademicStaff : public User
         string getStaffID();
 };
 
-#endif ACADEMIC_STAFF_H
+#endif //ACADEMIC_STAFF_H
