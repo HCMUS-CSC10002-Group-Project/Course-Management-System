@@ -7,11 +7,11 @@ class CourseService
 {
     public: 
     bool addCourse(Course course);
-    bool updateCourse(Course course);
-    bool enrollStudentInCourse(Student student);
-    bool unenrollStudentFromCourse(Student student);
+    bool updateCourse(string courseID, Course newCourse);
+    bool enrollStudentInCourse(string studenID, string courseID);
+    bool unenrollStudentFromCourse(string studentId, string courseID);
     bool deleteCourse(Course course);
-    LinkedList<Course> viewCourse(LinkedList<Course> course);
+    LinkedList<Course> viewCourse(string courseID);
     LinkedList<Student> viewStudentInCourse(LinkedList<Student> student);
 };
 #endif
