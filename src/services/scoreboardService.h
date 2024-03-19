@@ -5,7 +5,7 @@
 #include "../entities/student.h"
 #include "../data_structures/LinkedList.h"
 
-class scoreboardService
+class ScoreboardService
 {
     public:
         bool setScore(map<Student,DetailedScore> scoreSheet, float score, string scoreType);
