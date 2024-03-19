@@ -15,7 +15,8 @@ target_include_directories(runUnitTests PRIVATE
 # Include the directory where your DynamicArray.h and DynamicArrayImpl.h are located
 target_include_directories(runUnitTests PRIVATE
     ${PROJECT_SOURCE_DIR}/src/data_structures 
-    ${PROJECT_SOURCE_DIR}/src/entities # Adjust this path as necessary
+    ${PROJECT_SOURCE_DIR}/src/entities 
+    ${PROJECT_SOURCE_DIR}/src/services  # Adjust this path as necessary
 )
 
 # Link the test executable against Google Test
