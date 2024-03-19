@@ -42,4 +42,4 @@ class Student : public User
         bool setCohort(int newCohort);
 };
 
-#endif STUDENT_H
+#endif //STUDENT_H
