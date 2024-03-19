@@ -1,6 +1,5 @@
 #include "DoublyLinkedList.h"
 #include <stdexcept>
-#include <iostream>
 
 using namespace std;
 
@@ -104,7 +103,7 @@ int DoublyLinkedList<T>::Size()
 
 // Checks if the doubly linked list is empty
 template <typename T>
-bool DoublyLinkedList<T>::isEmpty()
+bool DoublyLinkedList<T>::IsEmpty()
 {
     return size == 0;
 }

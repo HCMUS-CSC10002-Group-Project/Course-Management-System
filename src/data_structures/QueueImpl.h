@@ -1,17 +1,20 @@
 #include "Queue.h"
+#include <stdexcept>
+
+using namespace std;
 
 // Constructor: Initializes frontNode, rearNode, and Size
 template <typename T>
-Queue<T>::Queue() : frontNode(nullptr), rearNode(nullptr), Size(0) {}
+Queue<T>::Queue() : frontNode(nullptr), rearNode(nullptr), size(0) {}
 
 // Enqueues an element to the end of the queue
 template <typename T>
-void Queue<T>::enqueue(T element)
+void Queue<T>::EnQueue(T element)
 {
 
     Node<T> *newNode = new Node<T>(element);
 
-    if (isEmpty())
+    if (IsEmpty())
     {
         frontNode = newNode;
     }
@@ -21,15 +24,15 @@ void Queue<T>::enqueue(T element)
     }
 
     rearNode = newNode;
-    Size++;
+    size++;
 }
 
 // Dequeues an element from the front of the queue
 template <typename T>
-T Queue<T>::dequeue()
+T Queue<T>::DeQueue()
 {
 
-    if (isEmpty())
+    if (IsEmpty())
     {
         throw std::out_of_range("Queue is empty");
     }
@@ -45,15 +48,15 @@ T Queue<T>::dequeue()
     }
 
     delete temp;
-    Size--;
+    size--;
     return dequeuedData;
 }
 
 // Returns the data of the element at the front of the queue without removing it
 template <typename T>
-T Queue<T>::front()
+T Queue<T>::Front()
 {
-    if (isEmpty())
+    if (IsEmpty())
     {
         throw std::out_of_range("Queue is empty");
     }
@@ -63,16 +66,16 @@ T Queue<T>::front()
 
 // Checks if the queue is empty
 template <typename T>
-bool Queue<T>::isEmpty() const
+bool Queue<T>::IsEmpty() const
 {
-    return Size == 0;
+    return size == 0;
 }
 
 // Returns the number of elements in the queue
 template <typename T>
-int Queue<T>::size() const
+int Queue<T>::Size() const
 {
-    return Size;
+    return size;
 }
 
 // Destructor: Deallocates memory by deleting all nodes in the queue
