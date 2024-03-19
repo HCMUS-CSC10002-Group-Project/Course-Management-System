@@ -26,6 +26,6 @@ class SchoolYear
         bool addSemester(Semester semester);
         bool removeSemester(Semester semester);
         //constructor
-        SchoolYear(Date start_date, Date end_date, LinkedList<Semester> semesters);
+        SchoolYear(Date start_date, Date end_date);
 };
 #endif
