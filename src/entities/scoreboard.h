@@ -15,7 +15,7 @@ class Scoreboard
     string getCourseID();
     //methods
     void addScore(Student student, DetailedScore detailedScore);
-    void updateStudentResult(Student student, DetailedSocre detailedScore);
+    void updateStudentResult(Student student, DetailedScore detailedScore);
     //constructor
     Scoreboard(string course_ID);
 };
