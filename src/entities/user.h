@@ -8,6 +8,7 @@ using std::string;
 class User
 {
     protected:
+        //user data
         string ID;
         string role;
         string first_name;
@@ -19,15 +20,19 @@ class User
         string password;
 
     public:
+        //constructor
+        User(string role, string fullName, string department, string email, string username, string password);
+
+        //getters and setters
         string getID();
         string getFirstName();
         string getLastName();
         string getFullName();
-        void setFullName(string newFullName);
+        bool setFullName(string newFullName);
         string getDepartment();
-        void setDepartment(string newDepartment);
+        bool setDepartment(string newDepartment);
         string getEmail();
-        void setEmail(string newEmail);
+        bool setEmail(string newEmail);
         string getUsername();
 };
 

@@ -17,7 +17,7 @@ template <typename T>
 struct Stack
 {
     Node<T> *topNode;
-    int Size;
+    int size;
 
     Stack();
     void Push(T element);

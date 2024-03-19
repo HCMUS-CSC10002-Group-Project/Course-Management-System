@@ -5,7 +5,7 @@ using namespace std;
 
 // Constructor: Initializes frontNode, rearNode, and Size
 template <typename T>
-Queue<T>::Queue() : frontNode(nullptr), rearNode(nullptr), Size(0) {}
+Queue<T>::Queue() : frontNode(nullptr), rearNode(nullptr), size(0) {}
 
 // Enqueues an element to the end of the queue
 template <typename T>
@@ -24,7 +24,7 @@ void Queue<T>::EnQueue(T element)
     }
 
     rearNode = newNode;
-    Size++;
+    size++;
 }
 
 // Dequeues an element from the front of the queue
@@ -48,7 +48,7 @@ T Queue<T>::DeQueue()
     }
 
     delete temp;
-    Size--;
+    size--;
     return dequeuedData;
 }
 
@@ -68,14 +68,14 @@ T Queue<T>::Front()
 template <typename T>
 bool Queue<T>::IsEmpty() const
 {
-    return Size == 0;
+    return size == 0;
 }
 
 // Returns the number of elements in the queue
 template <typename T>
 int Queue<T>::Size() const
 {
-    return Size;
+    return size;
 }
 
 // Destructor: Deallocates memory by deleting all nodes in the queue

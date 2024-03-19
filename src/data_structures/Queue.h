@@ -19,7 +19,7 @@ struct Queue
 private:
     Node<T> *frontNode;
     Node<T> *rearNode;
-    int Size;
+    int size;
 
 public:
     Queue();

@@ -5,7 +5,7 @@ using namespace std;
 
 // Constructor: Initializes an empty stack.
 template <typename T>
-Stack<T>::Stack() : topNode(nullptr), Size(0) {}
+Stack<T>::Stack() : topNode(nullptr), size(0) {}
 
 // Pushes an element onto the top of the stack.
 template <typename T>
@@ -14,7 +14,7 @@ void Stack<T>::Push(T element)
     Node<T> *newNode = new Node<T>(element);
     newNode->next = topNode;
     topNode = newNode;
-    Size++;
+    size++;
 }
 
 // Pops the top element off the stack and returns it.
@@ -29,7 +29,7 @@ T Stack<T>::Pop()
     T poppedData = temp->data;
     topNode = topNode->next;
     delete temp;
-    Size--;
+    size--;
     return poppedData;
 }
 
@@ -48,14 +48,14 @@ T Stack<T>::Top() const
 template <typename T>
 bool Stack<T>::IsEmpty() const
 {
-    return Size == 0;
+    return size == 0;
 }
 
 // Returns the number of elements in the stack.
 template <typename T>
 int Stack<T>::Size() const
 {
-    return Size;
+    return size;
 }
 
 // Destructor: Deallocates memory used by the stack.
