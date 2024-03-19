@@ -2,9 +2,8 @@
 #define STUDENT_H
 
 #include "user.h"
+#include "date.h"
 #include "../data_structures/LinkedList.h"
-
-//TODO: uncomment date_of_birth and its getter/setter after Date is implemented
 
 class Student : public User
 {
@@ -14,11 +13,14 @@ class Student : public User
         string class_ID;
         LinkedList <string> course_IDs;
         string gender;
-        //Date date_of_birth;
+        Date date_of_birth;
         string major;
         int cohort;
     
     public:
+        //constructor
+        Student(string classID, string gender, Date dateOfBirth, string major, int cohort);
+
         //view courses and scoreboard
         void viewMyCourses();
         void viewMyScoreboard();
@@ -26,18 +28,18 @@ class Student : public User
         //setters and getters
         string getStudentID();
         string getClassID();
-        void setClassID(string newClassID);
-        void addCourse(string newCourseID);
-        void removeCourse(string courseID);
+        bool setClassID(string newClassID);
+        bool addCourse(string newCourseID);
+        bool removeCourse(string courseID);
         LinkedList <string> getCourseIDs();
         string getGender();
-        void setGender(string newGender);
-        //Date getDateOfBirth();
-        //void setDateOfBirth(Date newDateOfBirth);
+        bool setGender(string newGender);
+        Date getDateOfBirth();
+        bool setDateOfBirth(Date newDateOfBirth);
         string getMajor();
-        void setMajor(string newMajor);
+        bool setMajor(string newMajor);
         int getCohort();
-        void setCohort(int newCohort);
+        bool setCohort(int newCohort);
 };
 
 #endif STUDENT_H
