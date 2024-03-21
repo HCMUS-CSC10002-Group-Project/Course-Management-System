@@ -28,6 +28,8 @@ class User
         string getFirstName();
         string getLastName();
         string getFullName();
+        string getRole();
+        bool setRole(string newRole);
         bool setFullName(string newFullName);
         string getDepartment();
         bool setDepartment(string newDepartment);

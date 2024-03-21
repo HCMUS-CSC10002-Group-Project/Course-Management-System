@@ -20,5 +20,7 @@ class Semester
         //setter
         bool setStartDate(Date newStartDate);
         bool setEndDate(Date newEndDate);
+        //constructor
+        Semester(string year_ID, Date start_date, Date end_date);
 };
 #endif
