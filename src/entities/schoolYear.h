@@ -14,7 +14,7 @@ class SchoolYear
         LinkedList<Semester> semesters;
     public:
         //getters
-        string getyearID();
+        string getYearID();
         Date getStartDate();
         Date getEndDate();
         LinkedList<Semester> getSemesters();
