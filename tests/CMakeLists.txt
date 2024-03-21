@@ -4,23 +4,25 @@
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Define your test executable and list all the test source files
-add_executable(runUnitTests TestMain.cpp DynamicArrayTest.cpp LinkedListTest.cpp DoublyLinkedListTest.cpp StackTest.cpp QueueTest.cpp UserTest.cpp)
-
 # Include Google Test's headers
-target_include_directories(runUnitTests PRIVATE
-    ${PROJECT_SOURCE_DIR}/external/googletest/googletest/include
-)
+include_directories(runUnitTests PRIVATE ${PROJECT_SOURCE_DIR}/external/googletest/googletest/include)
 
-# Include the directory where your DynamicArray.h and DynamicArrayImpl.h are located
-target_include_directories(runUnitTests PRIVATE
-    ${PROJECT_SOURCE_DIR}/src/data_structures 
-    ${PROJECT_SOURCE_DIR}/src/entities 
-    ${PROJECT_SOURCE_DIR}/src/services  # Adjust this path as necessary
+# Organize test source files by subdirectories
+file(GLOB DATA_STRUCTURES_TESTS ${PROJECT_SOURCE_DIR}/tests/data_structures/*.cpp)
+file(GLOB ENTITIES_TESTS ${PROJECT_SOURCE_DIR}/tests/entities/*.cpp)
+file(GLOB SERVICES_TESTS ${PROJECT_SOURCE_DIR}/tests/services/*.cpp)
+
+# Define your test executable and list all the test source files
+add_executable(
+    runUnitTests 
+    TestMain.cpp 
+    ${DATA_STRUCTURES_TESTS}
+    ${ENTITIES_TESTS}
+    ${SERVICES_TESTS}
 )
 
 # Link the test executable against Google Test
-target_link_libraries(runUnitTests gtest gtest_main)
+target_link_libraries(runUnitTests PRIVATE entity_lib service_lib data_structures gtest gtest_main)
 
 # Optionally, register your test executable with CTest
 add_test(NAME AllTests COMMAND runUnitTests)
