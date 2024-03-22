@@ -41,6 +41,8 @@ public:
     bool setMajor(string newMajor);
     int getCohort();
     bool setCohort(int newCohort);
+    string getSocialID();
+    bool setSocialID(string newSocialID);
 };
 
 #endif STUDENT_H
