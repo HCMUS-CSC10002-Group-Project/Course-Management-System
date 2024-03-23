@@ -16,10 +16,11 @@ class Student : public User
         Date date_of_birth;
         string major;
         int cohort;
+        int social_ID;
     
     public:
         //constructor
-        Student(string classID, string gender, Date dateOfBirth, string major, int cohort);
+        Student(string classID, string gender, Date dateOfBirth, string major, int cohort, int socialID);
 
         //view courses and scoreboard
         void viewMyCourses();
@@ -40,6 +41,8 @@ class Student : public User
         bool setMajor(string newMajor);
         int getCohort();
         bool setCohort(int newCohort);
+        int getSocialID();
+        bool setSocialID(int newSocialID);
 };
 
 #endif //STUDENT_H
