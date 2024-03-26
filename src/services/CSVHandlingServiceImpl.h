@@ -32,6 +32,7 @@ template <typename T>
 std::string CSVHandlingService<T>::generateCSVFromData(const LinkedList<T> &data)
 {
     std::string CSVString;
+    CSVString += data.Get(0).getHeader() + "\n";
     for (int i = 0; i < data.Size(); i++)
     {
         CSVString += data.Get(i).serialize() + "\n";
@@ -54,7 +55,7 @@ LinkedList<T> CSVHandlingService<T>::parseCSVToData(const std::string &CSVString
 }
 
 template <typename T>
-bool CSVHandlingService<T>::appendToCSV(const T &object, const std::string &filePath)
+bool CSVHandlingService<T>::appendToCSV(T &object, const std::string &filePath)
 {
     std::ofstream file(filePath, std::ios_base::app);
     if (!file.is_open())
@@ -68,7 +69,7 @@ bool CSVHandlingService<T>::appendToCSV(const T &object, const std::string &file
 }
 
 template <typename T>
-bool CSVHandlingService<T>::deleteFromCSV(const std::string &identifier, const std::string &filePath, std::function<std::string(const T &)> serializer, std::function<bool(const T &, const std::string &)> matcher)
+bool CSVHandlingService<T>::deleteFromCSV(const std::string &ID, const std::string &filePath)
 {
     std::ifstream file(filePath);
     std::ofstream tempFile("temp.csv");
@@ -78,12 +79,16 @@ bool CSVHandlingService<T>::deleteFromCSV(const std::string &identifier, const s
     }
 
     std::string line;
+    std::getline(file, line);
+    tempFile << line << "\n";
     while (std::getline(file, line))
     {
-        T object = T::deserialize(line);
-        if (!matcher(object, identifier))
+        std::stringstream stream(line);
+        std::string currentID;
+        std::getline(stream, currentID, ',');
+        if (currentID != ID)
         {
-            tempFile << serializer(object) << "\n";
+            tempFile << line << "\n";
         }
     }
 

@@ -13,8 +13,8 @@ public:
     static LinkedList<T> importFromCSV(const std::string &filePath, std::function<T(const std::string &)> deserializer);
     static std::string generateCSVFromData(const LinkedList<T> &data);
     static LinkedList<T> parseCSVToData(const std::string &CSVString, std::function<T(const std::string &)> deserializer);
-    static bool appendToCSV(const T &object, const std::string &filePath);
-    static bool deleteFromCSV(const std::string &identifier, const std::string &filePath, std::function<std::string(const T &)> serializer, std::function<bool(const T &, const std::string &)> matcher);
+    static bool appendToCSV(T &object, const std::string &filePath);
+    static bool deleteFromCSV(const std::string &ID, const std::string &filePath);
 };
 
 #include "CSVHandlingServiceImpl.h" // Implementation of template class
