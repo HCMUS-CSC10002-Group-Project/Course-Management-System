@@ -3,6 +3,10 @@
 DynamicArray<string> split(const std::string &str, const char delimiter)
 {
     DynamicArray<string> parts;
+    if (str == "")
+    {
+        return parts;
+    }
     std::string part;
 
     for (char c : str)
