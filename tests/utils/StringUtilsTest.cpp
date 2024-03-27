@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "StringUtils.h"
+#include "LinkedList.h"
 
 TEST(StringUtilsTest, Split)
 {
@@ -44,4 +45,17 @@ TEST(StringUtilsTest, JoinMultipleDelimiter)
     parts.Add("1;2;3");
     std::string joined = join(parts, ',');
     ASSERT_EQ(joined, "Hello,World,1;2;3");
+}
+
+TEST(StringUtilsTest, SplitEmptyString)
+{
+    std::string str = "";
+    DynamicArray<std::string> parts = split(str, ',');
+    ASSERT_EQ(parts.Size(), 0);
+    LinkedList<std::string> parts2;
+    for (int i = 0; i < parts.Size(); i++)
+    {
+        parts2.AddToEnd(parts.Get(i));
+    }
+    ASSERT_EQ(parts2.Size(), 0);
 }
