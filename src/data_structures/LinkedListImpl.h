@@ -14,6 +14,35 @@ LinkedList<T>::~LinkedList()
     Clear();
 }
 
+// Copy constructor: Initializes the linked list as a deep copy of another linked list.
+template <typename T>
+LinkedList<T>::LinkedList(const LinkedList &other) : head(nullptr), size(0)
+{
+    Node<T> *current = other.head;
+    while (current)
+    {
+        AddToEnd(current->data);
+        current = current->next;
+    }
+}
+
+// Copy assignment operator: Assigns the linked list as a deep copy of another linked list.
+template <typename T>
+LinkedList<T> &LinkedList<T>::operator=(const LinkedList &other)
+{
+    if (this == &other)
+        return *this;
+
+    Clear();
+    Node<T> *current = other.head;
+    while (current)
+    {
+        AddToEnd(current->data);
+        current = current->next;
+    }
+    return *this;
+}
+
 // Adds an element to the front of the linked list.
 template <typename T>
 void LinkedList<T>::AddToFront(T element)
