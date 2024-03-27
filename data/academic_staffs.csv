@@ -1,1 +1,2 @@
-ID,Role,First Name,Last Name,Full Name,Department,Email,Username,Password,Staff ID
+ID,Full Name,Department,Email,Username,Password,Staff ID
+1,John Doe,IT,a@gmail.com,johndoe,123456,1
