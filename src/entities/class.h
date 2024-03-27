@@ -4,20 +4,26 @@
 #include "../data_structures/LinkedList.h"
 class Class
 {
-    private: 
-        string class_ID;
-        string name;
-        LinkedList<Student> students;
-    public: 
-        //getters
-        string getClassID();
-        string getName();
-        LinkedList<Student> getListOfStudents();
-        //setters
-        void setName(string name);
-        bool addStudent(Student student);
-        bool removeStudent(Student student);
-        //constructor
-        Class(string name, LinkedList<Student> students);
+private:
+    string class_ID;
+    string name;
+    LinkedList<string> student_IDs;
+
+public:
+    // constructor
+    Class(string name, LinkedList<string> student_IDs);
+    Class(string class_ID, string name, LinkedList<string> student_IDs);
+    // getters
+    string getClassID();
+    string getName();
+    LinkedList<string> getListOfStudentIDs();
+    // setters
+    bool setName(string name);
+    bool addStudent(string student_ID);
+    bool removeStudent(string student_ID);
+    // serialization
+    string serialize();
+    static Class deserialize(const string &serialized);
+    static string getHeader();
 };
 #endif

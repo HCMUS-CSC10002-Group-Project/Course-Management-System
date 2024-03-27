@@ -13,6 +13,10 @@ struct DynamicArray
 
     DynamicArray(int initialCapacity = 10); // Constructor
     ~DynamicArray();                        // Destructor
+    // Copy Constructor
+    DynamicArray(const DynamicArray<T> &other);
+    // Assignment Operator
+    DynamicArray<T> &operator=(const DynamicArray<T> &other);
 
     void Add(T element);
     void Insert(int index, T element);

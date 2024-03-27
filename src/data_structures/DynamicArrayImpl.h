@@ -17,6 +17,34 @@ DynamicArray<T>::~DynamicArray()
     delete[] arr;
 }
 
+// Copy Constructor
+template <typename T>
+DynamicArray<T>::DynamicArray(const DynamicArray<T> &other) : capacity(other.capacity), size(other.size)
+{
+    arr = new T[capacity];
+
+    for (int i = 0; i < size; ++i)
+        arr[i] = other.arr[i];
+}
+
+// Assignment Operator
+template <typename T>
+DynamicArray<T> &DynamicArray<T>::operator=(const DynamicArray<T> &other)
+{
+    if (this != &other)
+    {
+        delete[] arr;
+        capacity = other.capacity;
+        size = other.size;
+        arr = new T[capacity];
+
+        for (int i = 0; i < size; ++i)
+            arr[i] = other.arr[i];
+    }
+
+    return *this;
+}
+
 // Add element to the end of the array
 template <typename T>
 void DynamicArray<T>::Add(T element)

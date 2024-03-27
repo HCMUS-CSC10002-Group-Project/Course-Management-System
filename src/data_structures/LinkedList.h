@@ -19,6 +19,8 @@ struct LinkedList
 public:
     LinkedList();
     ~LinkedList();
+    LinkedList(const LinkedList &other);            // Copy constructor
+    LinkedList &operator=(const LinkedList &other); // Copy assignment operator
 
     void AddToFront(T element);
     void AddToEnd(T element);

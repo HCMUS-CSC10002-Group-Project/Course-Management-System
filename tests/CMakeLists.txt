@@ -11,7 +11,7 @@ include_directories(runUnitTests PRIVATE ${PROJECT_SOURCE_DIR}/external/googlete
 file(GLOB DATA_STRUCTURES_TESTS ${PROJECT_SOURCE_DIR}/tests/data_structures/*.cpp)
 file(GLOB ENTITIES_TESTS ${PROJECT_SOURCE_DIR}/tests/entities/*.cpp)
 file(GLOB SERVICES_TESTS ${PROJECT_SOURCE_DIR}/tests/services/*.cpp)
-
+file(GLOB UTILITY_TESTS ${PROJECT_SOURCE_DIR}/tests/utils/*.cpp)
 # Define your test executable and list all the test source files
 add_executable(
     runUnitTests 
@@ -19,10 +19,11 @@ add_executable(
     ${DATA_STRUCTURES_TESTS}
     ${ENTITIES_TESTS}
     ${SERVICES_TESTS}
+    ${UTILITY_TESTS}
 )
 
 # Link the test executable against Google Test
-target_link_libraries(runUnitTests PRIVATE entity_lib service_lib data_structures gtest gtest_main)
+target_link_libraries(runUnitTests PRIVATE entity_lib service_lib data_structures utility_lib gtest gtest_main)
 
 # Optionally, register your test executable with CTest
 add_test(NAME AllTests COMMAND runUnitTests)
