@@ -1,0 +1,4 @@
+ID,Role,Full Name,Department,Email,Username,Password
+1,Admin,John Doe,IT,aa@gmail.com,admin,admin
+2,User,Jane Doe,HR,bbaba@gmail.com,user,user
+3,User,John Smith,Finance,c@gmail.com,user22,user22

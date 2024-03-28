@@ -6,22 +6,29 @@
 using std::string;
 class DetailedScore
 {
-    private:
+private:
     float midterm_mark;
     float final_mark;
     float total_mark;
-    map<string, float> other_marks;
+    float other_mark;
 
-    public:
-    //getters
+public:
+    // getters
+    float getOtherMark();
     float getMidtermMark();
     float getFinalMark();
     float geTotalMark();
     float calcTotalMark();
-    //setters
+    // setters
+    bool setOtherMark(float newOtherMark);
     bool setMidtermMark(float newMidtermMark);
     bool setFinalMark(float newFinalMark);
-    //constructors
-    DetailedScore(float midtermMark, float finalMark, float totalMark, map<string, float> otherMarks);
+    // constructors
+    DetailedScore();
+    DetailedScore(float otherMark, float midtermMark, float finalMark, float totalMark);
+
+    // serialization
+    string serialize();
+    static DetailedScore deserialize(const string &serialized);
 };
 #endif

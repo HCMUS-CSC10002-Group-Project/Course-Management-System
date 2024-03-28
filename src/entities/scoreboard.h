@@ -7,16 +7,23 @@
 using std::string;
 class Scoreboard
 {
-    private:
-        string course_ID;
-        map<Student, DetailedScore> scores;
-    public:
-    //getters
-    string getCourseID();
-    //methods
-    void addScore(Student student, DetailedScore detailedScore);
-    void updateStudentResult(Student student, DetailedScore detailedScore);
-    //constructor
+private:
+    string course_ID;
+    map<string, DetailedScore> scores;
+
+public:
+    // constructors
     Scoreboard(string course_ID);
+    Scoreboard(string course_ID, map<string, DetailedScore> scores);
+    // getters
+    string getCourseID();
+    map<string, DetailedScore> getScores();
+    // methods
+    void addScore(string student_ID, DetailedScore detailedScore);
+    void updateStudentResult(string student_ID, DetailedScore detailedScore);
+    // serialization
+    string serialize();
+    static Scoreboard deserialize(string data);
+    string getHeader();
 };
 #endif
