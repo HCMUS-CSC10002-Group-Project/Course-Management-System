@@ -30,14 +30,15 @@ public:
     string getLastName();
     string getFullName();
     string getRole();
-    bool setRole(string newRole);
-    bool setFullName(string newFullName);
     string getDepartment();
-    bool setDepartment(string newDepartment);
     string getEmail();
-    bool setEmail(string newEmail);
     string getUsername();
     string getPassword();
+    bool setRole(string newRole);
+    bool setFullName(string newFullName);
+    bool setDepartment(string newDepartment);
+    bool setEmail(string newEmail);
+    bool setPassword(string newPassword);
     // serialization
     string serialize();
     static User deserialize(const string &serialized);

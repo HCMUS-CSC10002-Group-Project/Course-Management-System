@@ -68,14 +68,6 @@ bool User::setRole(string newRole)
     return true;
 }
 
-bool User::setFullName(string newFullName)
-{
-    if (newFullName.empty() || newFullName == full_name)
-        return false;
-    full_name = newFullName;
-    return true;
-}
-
 string User::getDepartment()
 {
     return department;
@@ -92,14 +84,6 @@ bool User::setDepartment(string newDepartment)
 string User::getEmail()
 {
     return email;
-}
-
-bool User::setEmail(string newEmail)
-{
-    if (newEmail.empty() || newEmail == email)
-        return false;
-    email = newEmail;
-    return true;
 }
 
 string User::getUsername()
